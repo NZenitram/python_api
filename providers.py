@@ -21,7 +21,7 @@ def getProvidersByUserId(id):
         raise ApiError('GET /providers/:id {}'.format(resp.status_code))
     for provider in resp.json():
         userProviders.append(Provider(**provider))
-        return userProviders
+    return userProviders
 
 # python -c 'import providers; providers.getProvidersByUserId(18)'
 def getProviderNames(id):

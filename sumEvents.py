@@ -1,6 +1,8 @@
 import providers
 
 def sumDelivered(id):
-    import pdb; pdb.set_trace()
+    deliveries = []
     data = providers.getProvidersByUserId(id)
-    print data
+    for provider in data:
+        deliveries.append(provider.delivered)
+    print sum(deliveries)
