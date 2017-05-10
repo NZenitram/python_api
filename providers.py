@@ -1,7 +1,6 @@
 from provider import *
 import requests
 import json
-# pdb.set_trace()
 
 # python -c 'import providers; providers.getProviders()'
 def getProviders():
