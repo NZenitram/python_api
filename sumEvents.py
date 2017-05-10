@@ -1,8 +1,14 @@
 import providers
 
+def getProviders(id):
+    return providers.getProvidersByUserId(id)
+
+# python -c 'import sumEvents; sumEvents.sumDelivered(18)'
 def sumDelivered(id):
     deliveries = []
-    data = providers.getProvidersByUserId(id)
-    for provider in data:
+    for provider in getProviders(id):
         deliveries.append(provider.delivered)
-    print sum(deliveries)
+    print 'Deliveries: ' + str(sum(deliveries))
+
+# def sumOpens(id):
+#     opens = []
