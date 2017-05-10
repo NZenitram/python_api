@@ -1,6 +1,7 @@
 import providers
 
 def getProviders(id):
+    # import pdb; pdb.set_trace()
     return providers.getProvidersByUserId(id)
 
 # python -c 'import sumEvents; sumEvents.sumDelivered(18)'
