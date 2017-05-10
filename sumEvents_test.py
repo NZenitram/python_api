@@ -20,4 +20,16 @@ class TestSumEvents(unittest.TestCase):
         self.assertTrue(self.data[0].spam_reports)
 
     def test_it_sums_delivered_events(self):
+        sum_del = sumEvents.sumDelivered(self.data)
         self.assertTrue(sumEvents.sumDelivered(self.data))
+        self.assertEqual(sum_del, 'Deliveries: 56988592')
+
+    def test_it_sums_opens_events(self):
+        sum_opens = sumEvents.sumOpens(self.data)
+        self.assertTrue(sumEvents.sumOpens(self.data))
+        self.assertEqual(sum_opens, 'Opens: 9094192')
+
+    def test_it_sums_spam_reports(self):
+        sum_spam = sumEvents.sumSpamReports(self.data)
+        self.assertTrue(sumEvents.sumSpamReports(self.data))
+        self.assertEqual(sum_spam, 'Spam Reports: 21124')

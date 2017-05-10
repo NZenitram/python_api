@@ -18,7 +18,7 @@ def getProviders():
 def getProvidersByUserId(id):
     userProviders = []
     # resp = requests.get("https://api.simplymailstatistics.com/api/v1/providers/%s" % id)
-    resp = requests.get("https://localhost:3000/api/v1/providers/%s" % id")
+    resp = requests.get("http://localhost:3000/api/v1/providers/%s" % id)
     if resp.status_code != 200:
         raise ApiError('GET /providers/:id {}'.format(resp.status_code))
     for provider in resp.json():
