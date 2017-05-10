@@ -4,21 +4,27 @@ def getProviders(id):
     return providers.getProvidersByUserId(id)
 
 # python -c 'import sumEvents; sumEvents.sumDelivered(18)'
-def sumDelivered(id):
+def sumDelivered(data):
     deliveries = []
-    for provider in getProviders(id):
+    for provider in data:
         deliveries.append(provider.delivered)
     return 'Deliveries: ' + str(sum(deliveries))
 
 # python -c 'import sumEvents; sumEvents.sumOpens(18)'
-def sumOpens(id):
+def sumOpens(data):
     opens = []
-    for provider in getProviders(id):
+    for provider in data:
         opens.append(provider.opens)
     return 'Opens: ' + str(sum(opens))
 
-def sumSpamReports(id):
+def sumSpamReports(data):
     spam_reports = []
-    for provider in getProviders(id):
+    for provider in data:
         spam_reports.append(provider.spam_reports)
     return 'Spam Reports: ' + str(sum(spam_reports))
+
+def returnEvents(id):
+    data = getProviders(id)
+    print sumDelivered(data)
+    print sumOpens(data)
+    print sumSpamReports(data)
